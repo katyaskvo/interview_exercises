@@ -3,13 +3,15 @@
 
 /* colors */
 $magenta: #DB0A5B;
-$ligh-gray: #EFEFEF;
-$border-color: #C1C1C1;
+$ligh-gray: #F1F1F1;
+$dark-gray: #4D4D4D;
+$border-color: #DEDEDE;
 
 /* size units */
 $logo-size: 60px;
 $main-padding: 20px;
 $text-line-heght: 14px;
+$sidebar-width: 340px;
 
 * {
   font-family: "Avenir", sans-serif;
@@ -21,7 +23,7 @@ html, body {
 }
 body {
   min-width: 1024px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* container is 100% height or more */
@@ -57,8 +59,8 @@ body {
     position: relative;
 
     img {
-      width: 43px;
-      height: 48px;
+      width: 35px;
+      height: 40px;
       display: block;
       top: 50%;
       left: 50%;
@@ -72,7 +74,7 @@ body {
     ul {
       list-style: none;
       padding: 10px;
-      font-size: 12px;
+      font-size: 11px;
       li {
         text-align: center;
         margin-bottom: 10px;
@@ -92,7 +94,7 @@ body {
           @include transition-duration(0.3s);
         }
         span {
-          font-size: 10px;
+          font-size: 9px;
         }
         &:hover {
           .nav-button {
@@ -118,24 +120,25 @@ main {
     }
 }
 
-/* header */
-header {
+/* main header */
+#main-header {
   height: $logo-size;
   width: 100%;
   padding: 0 $main-padding;
   box-sizing: border-box;
   background-color: $ligh-gray;
   border-bottom: 1px solid $border-color;
-  @include box-shadow($border-color 0px 1px 4px);
+  @include box-shadow($border-color 0px 1px 3px);
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   h2 {
     float: left;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 200;
     line-height: $logo-size;
+    color: $dark-gray;
   }
   /* hamburger menu */
   #menu-toggle {
@@ -148,8 +151,8 @@ header {
       width: 22px;
       height: 4px;
       display: block;
-      margin-bottom: 4px;
-      background-color: #4D4D4D;
+      margin-bottom: 3px;
+      background-color: $dark-gray;
       border-radius: 2px;
       @include transition-property(background-color);
       @include transition-duration(0.3s);
@@ -162,13 +165,9 @@ header {
   }
 }
 
-#main-article {
-  padding-top: $logo-size;
-}
-
 /* list of articles */
 #articles-list {
-  width: 340px;
+  width: $sidebar-width;
   height: auto;
   min-height: 100vh;
   float: left;
@@ -179,12 +178,14 @@ header {
 
   .article-preview {
     border-bottom: 1px solid $border-color;
-    padding: 8px 12px 4px 12px;
+    padding: 8px 12px 6px 12px;
 
     &:first-child {
-        padding-top: $logo-size + 12px; 
-      }
-
+      padding-top: $logo-size + 8px;
+    }
+    h4 {
+      margin-bottom: 3px;
+    }
     p {
       height: $text-line-heght * 4;
       overflow: hidden;
@@ -201,6 +202,85 @@ header {
   }
 }
 
+/* article */
+#main-article {
+  padding: $logo-size $main-padding 0 $main-padding;
+  margin-left: $sidebar-width;
+
+  /* article header */
+  header {
+    width: 680px;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 0 10px 0;
+    margin-bottom: 16px;
+    h3 {
+      font-size: 18px;
+    }
+    span {
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+  /* initial letter */
+  .first-letter {
+    line-height: 20px;
+    font-size: 34px;
+    padding: 6px 3px 0 0;
+    margin-left: -2px;
+    float: left;
+  }
+
+  figure {
+    margin: 26px 0 22px 0;
+    img {
+      width: 500px;
+      height: 200px;
+      display: block;
+      background-color: #AAAAAA;
+      margin: 0 auto;
+    }
+    figcaption {
+      text-align: center;
+      font-size: 10px;
+      font-style: italic;
+      line-height: 20px;
+    }
+  }
+}
+
+/* message section */
+
+#message {
+  width: 100%;
+  padding: $main-padding $main-padding $main-padding $sidebar-width + $main-padding;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  border-top: 1px solid $border-color;
+
+  input {
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 18px;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: darken($border-color, 15%);
+    }
+  }
+}
 
 p {
   line-height: $text-line-heght;
