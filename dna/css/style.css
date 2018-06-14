@@ -1,1 +1,94 @@
-/* style
+/* colors */
+/* line 9, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+* {
+  font-family: "Avenir", sans-serif;
+  margin: 0;
+}
+
+/* Logo */
+/* line 15, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#logo {
+  font-size: 10px;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-color: #DB0A5B;
+  position: relative;
+}
+
+/* line 23, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#logo img {
+  width: 43px;
+  height: 48px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/* vertical main navigation */
+/* line 36, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation {
+  width: 60px;
+  background-color: #333;
+  color: white;
+}
+
+/* line 40, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul {
+  list-style: none;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* line 44, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* line 48, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+/* line 53, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul a .nav-button {
+  width: 40px;
+  height: 40px;
+  display: block;
+  background: white;
+  border-radius: 3px;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+/* line 63, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul a span {
+  font-size: 10px;
+}
+
+/* line 67, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#navigation ul a:hover .nav-button {
+  background-color: #DB0A5B;
+}
+
+/* line 75, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+p {
+  line-height: 1.2;
+}
+
+/*# sourceMappingURL=../css/style.map */
