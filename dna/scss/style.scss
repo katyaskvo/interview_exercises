@@ -4,23 +4,43 @@
 /* colors */
 $magenta: #DB0A5B;
 $ligh-gray: #EFEFEF;
+$border-color: #C1C1C1;
 
 /* size units */
 $logo-size: 60px;
 $main-padding: 20px;
+$text-line-heght: 14px;
 
 * {
   font-family: "Avenir", sans-serif;
   margin: 0;
 }
+
+html, body {
+  height: 100%;
+}
 body {
   min-width: 1024px;
+  font-size: 13px;
 }
 
+/* container is 100% height or more */
+#container {
+  height: auto;
+  min-height: 100%;
+  position: relative;
+    /* clear floated elements */
+    &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 /* vertical navigation */
 #navigation {
   width: $logo-size;
-  height: 100vh;
+  height: auto;
+  min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -87,14 +107,31 @@ body {
 /* main content */
 main {
   margin-left: $logo-size;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  padding-top: $logo-size;
+  /* clear floated elements */
+      &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 }
+
+/* header */
 header {
   height: $logo-size;
+  width: 100%;
   padding: 0 $main-padding;
+  box-sizing: border-box;
   background-color: $ligh-gray;
-  border-bottom: 1px solid #C1C1C1;
-  @include box-shadow(#C1C1C1 0px 1px 4px);
-  clear: both;
+  border-bottom: 1px solid $border-color;
+  @include box-shadow($border-color 0px 1px 4px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   h2 {
     float: left;
     font-size: 28px;
@@ -126,8 +163,38 @@ header {
   }
 }
 
-/* header */
+/* list of articles */
+#articles-list {
+  width: 340px;
+  height: auto;
+  min-height: 100vh;
+  float: left;
+  background-color: $ligh-gray;
+  border-right: 1px solid $border-color;
+  position: relative;
+  z-index: 1; /* show underneath header's shadow */
+
+  .article-preview {
+    border-bottom: 1px solid $border-color;
+    padding: 8px 12px 4px 12px;
+
+    p {
+      height: $text-line-heght * 4;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: "...";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $ligh-gray;
+      }
+    }
+  }
+}
+
 
 p {
-  line-height: 1.2;
+  line-height: $text-line-heght;
 }
