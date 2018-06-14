@@ -123,11 +123,10 @@ main {
   height: auto;
   min-height: 100vh;
   position: relative;
-  padding-top: 60px;
   /* clear floated elements */
 }
 
-/* line 115, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 114, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 main:after {
   content: "";
   display: table;
@@ -135,7 +134,7 @@ main:after {
 }
 
 /* header */
-/* line 123, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 122, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 header {
   height: 60px;
   width: 100%;
@@ -153,7 +152,7 @@ header {
   /* hamburger menu */
 }
 
-/* line 135, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 134, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 header h2 {
   float: left;
   font-size: 28px;
@@ -161,7 +160,7 @@ header h2 {
   line-height: 60px;
 }
 
-/* line 142, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 141, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 header #menu-toggle {
   float: right;
   display: block;
@@ -169,7 +168,7 @@ header #menu-toggle {
   cursor: pointer;
 }
 
-/* line 148, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 147, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 header #menu-toggle span {
   width: 22px;
   height: 4px;
@@ -187,13 +186,18 @@ header #menu-toggle span {
   transition-duration: 0.3s;
 }
 
-/* line 159, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 158, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 header #menu-toggle:hover span {
   background-color: #DB0A5B;
 }
 
+/* line 165, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#main-article {
+  padding-top: 60px;
+}
+
 /* list of articles */
-/* line 167, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 170, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 #articles-list {
   width: 340px;
   height: auto;
@@ -206,20 +210,25 @@ header #menu-toggle:hover span {
   /* show underneath header's shadow */
 }
 
-/* line 177, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 180, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 #articles-list .article-preview {
   border-bottom: 1px solid #C1C1C1;
   padding: 8px 12px 4px 12px;
 }
 
-/* line 181, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 184, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+#articles-list .article-preview:first-child {
+  padding-top: 72px;
+}
+
+/* line 188, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 #articles-list .article-preview p {
   height: 56px;
   overflow: hidden;
   position: relative;
 }
 
-/* line 186, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 193, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 #articles-list .article-preview p::after {
   content: "...";
   position: absolute;
@@ -228,7 +237,7 @@ header #menu-toggle:hover span {
   background-color: #EFEFEF;
 }
 
-/* line 198, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
+/* line 205, /Users/Skvo/Projects/interview_exercises/dna/scss/style.scss */
 p {
   line-height: 14px;
 }

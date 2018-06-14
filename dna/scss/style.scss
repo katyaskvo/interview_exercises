@@ -110,7 +110,6 @@ main {
   height: auto;
   min-height: 100vh;
   position: relative;
-  padding-top: $logo-size;
   /* clear floated elements */
       &:after {
       content: "";
@@ -163,6 +162,10 @@ header {
   }
 }
 
+#main-article {
+  padding-top: $logo-size;
+}
+
 /* list of articles */
 #articles-list {
   width: 340px;
@@ -177,6 +180,10 @@ header {
   .article-preview {
     border-bottom: 1px solid $border-color;
     padding: 8px 12px 4px 12px;
+
+    &:first-child {
+        padding-top: $logo-size + 12px; 
+      }
 
     p {
       height: $text-line-heght * 4;
