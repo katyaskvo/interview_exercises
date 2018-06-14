@@ -179,9 +179,21 @@ main {
   .article-preview {
     border-bottom: 1px solid $border-color;
     padding: 8px 12px 6px 12px;
+    position: relative;
 
     &:first-child {
       padding-top: $logo-size + 8px;
+    }
+    &.active:after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: block;
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg) skew(-10deg, -10deg);
+      background-color: white;
     }
     h4 {
       margin-bottom: 3px;
